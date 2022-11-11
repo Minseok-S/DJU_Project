@@ -1,0 +1,76 @@
+@import url("/css/register.css");
+@import url("/css/reset.css");
+@import url("/css/login.css");
+@import url("/css/register.css");
+@import url("/css/main.css");
+@import url("/css/read.css");
+@import url("/css/write.css");
+
+.header {
+  padding-bottom: 48px;
+  box-sizing: border-box;
+}
+
+.header .header_inner {
+  position: relative;
+  width: 743px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.header .logo {
+  display: inline-block;
+  margin-top: 108px;
+  vertical-align: top;
+  background-position: 0 -51px;
+  background-repeat: no-repeat;
+  width: 155px;
+  height: 30px;
+}
+
+.logo {
+  background-image: url("../img/logo.png");
+  background-size: 244px 107px;
+  background-repeat: no-repeat;
+}
+
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  color: #222;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none;
+  font-family: -apple-system, BlinkMacSystemFont, helvetica,
+    "Apple SD Gothic Neo", sans-serif;
+}
+
+.footer {
+  padding: 63px 0 32px;
+  box-sizing: border-box;
+  width: 460px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#btn {
+  height: 35px;
+  width: 70px;
+  font-size: 15px;
+  text-align: center;
+  background-color: #3c3c3c;
+  border: 2px solid black;
+  color: white;
+  border-radius: 10px;
+  margin: 10px 3px;
+}

@@ -1,0 +1,43 @@
+@import url("./reset.css");
+
+#main {
+  display: grid;
+  justify-content: space-around;
+}
+
+.board {
+  display: grid;
+  border-top: 1px solid #444444;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  margin: 0px auto;
+  padding: 0px;
+  justify-content: center;
+}
+
+.board_menu {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0px;
+  padding: 0px;
+}
+
+tr {
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+}
+
+td {
+  border-bottom: 1px solid #efefef;
+  padding: 10px;
+  text-align: center;
+}
+
+table .even {
+  background: #efefef;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
