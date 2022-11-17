@@ -8,14 +8,18 @@
 
 <body>
     <?php
-    session_start();
-    $URL = "./login.php";
-    if (!isset($_SESSION["userid"])) { ?>
-        <script>
-            alert("로그인이 필요합니다.");
-            location.replace("<?php echo $URL; ?>");
-        </script>
+        session_start();
+        $URL = "./login.php";
+        if (!isset($_SESSION["userid"])) { ?>
+            <script>
+                alert("로그인이 필요합니다.");
+                location.replace("<?php echo $URL; ?>");
+            </script>
     <?php }
+    ?>
+
+    <?php 
+        include './overlap/header.php'; 
     ?>
 
     <form method="post" action="./action/write_action.php">
@@ -45,7 +49,6 @@
                             <td>내용</td>
                             <td><textarea name="content" cols=75 rows=15 required></textarea></td>
                         </tr>
-                        <!-- 비밀번호 입력란 제거 -->
                     </table>
 
                     <div>
@@ -56,6 +59,10 @@
             </tr>
         </table>
     </form>
+
+    <?php include './overlap/footer.php' ?>
+
 </body>
 
 </html>
+

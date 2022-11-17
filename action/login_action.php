@@ -1,11 +1,16 @@
 <?php
 session_start();
 
-$connect = mysqli_connect("localhost", "dstory", "Thd24512!!", "dstory") or die("connect failed");
+include '../overlap/db.php';
 
 //입력 받은 id와 password
 $id = $_POST['id'];
-$pw = $_POST['pw'];
+$origin_pw = $_POST['pw'];
+
+$hash_pw = password_hash($origin_pw, PASSWORD_BCRYPT);
+$match = password_verify($origin_pw, $hash_pw); //비밀번호 확인
+
+
 
 //아이디가 있는지 검사
 $query = "select * from member where id='$id'";
@@ -18,10 +23,11 @@ if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_assoc($result);
 
     //비밀번호가 맞다면 세션 생성
-    if ($row['password'] == $pw) {    //password 평문비교 취약!
+    if ($match == true) {    //password 평문비교 취약!
         $_SESSION['userid'] = $id;
         if (isset($_SESSION['userid'])) {
 ?> <script>
+                alert("로그인 성공!");
                 location.replace("../index.php");
             </script>
         <?php

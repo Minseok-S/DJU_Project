@@ -1,78 +1,83 @@
-<style>
 .read_table {
-    border: 1px solid #444444;
-    margin-top: 30px;
+  border: 2px solid #444444;
+  margin-top: 30px;
+  width: 800px;
+  height: 450px;
 }
 
 .read_title {
-    height: 45px;
-    font-size: 23.5px;
-    text-align: center;
-    background-color: #3C3C3C;
-    color: white;
-    width: 1000px;
+  height: 45px;
+  font-size: 23.5px;
+  text-align: center;
+  background-color: #3c3c3c;
+  color: white;
+  width: 1000px;
+  vertical-align: middle;
 }
 
 .read_id {
-    text-align: center;
-    background-color: #EEEEEE;
-    width: 30px;
-    height: 33px;
+  text-align: center;
+  background-color: #eeeeee;
+  width: 30px;
+  height: 33px;
+  vertical-align: middle;
 }
 
 .read_id2 {
-    background-color: white;
-    width: 60px;
-    height: 33px;
-    padding-left: 10px;
+  background-color: white;
+  width: 60px;
+  height: 33px;
+  padding-left: 10px;
+  vertical-align: middle;
 }
 
 .read_hit {
-    background-color: #EEEEEE;
-    width: 30px;
-    text-align: center;
-    height: 33px;
+  background-color: #eeeeee;
+  width: 30px;
+  text-align: center;
+  height: 33px;
+  vertical-align: middle;
 }
 
 .read_hit2 {
-    background-color: white;
-    width: 60px;
-    height: 33px;
-    padding-left: 10px;
+  background-color: white;
+  width: 60px;
+  height: 33px;
+  padding-left: 10px;
+  vertical-align: middle;
 }
 
 .read_content {
-    padding: 20px;
-    border-top: 1px solid #444444;
-    height: 500px;
+  padding: 20px;
+  border-top: 1px solid #444444;
+  height: 250px;
+  text-align: left;
 }
 
 .read_btn {
-    width: 700px;
-    height: 200px;
-    text-align: center;
-    margin: auto;
-    margin-top: 40px;
+  width: 700px;
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
 }
 
 .read_comment_input {
-    width: 700px;
-    height: 500px;
-    text-align: center;
-    margin: auto;
+  width: 700px;
+  height: 500px;
+  text-align: center;
+  margin: auto;
 }
 
 .read_text3 {
-    font-weight: bold;
-    float: left;
-    margin-left: 20px;
+  font-weight: bold;
+  float: left;
+  margin-left: 20px;
 }
 
 .read_com_id {
-    width: 100px;
+  width: 100px;
 }
 
 .read_comment {
-    width: 500px;
+  width: 500px;
 }
-</style>

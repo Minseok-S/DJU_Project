@@ -7,44 +7,34 @@
 </head>
 
 <body>
-    
     <?php
-    $connect = mysqli_connect("localhost", "dstory", "Thd24512!!", "dstory");
-    $number = $_GET["number"]; // GET 방식 사용
-    session_start();
-    $query = "select title, content, date, hit, id from board where number = $number";
-    $result = $connect->query($query);
-    $rows = mysqli_fetch_assoc($result);
+        include './overlap/db.php';
+        $number = $_GET["number"]; // GET 방식 사용
+        session_start();
+        $query = "select title, content, date, hit, id from board where number = $number";
+        $result = $connect->query($query);
+        $rows = mysqli_fetch_assoc($result);
 
-    $hit = "update board set hit = hit + 1 where number = $number";
-    $connect->query($hit);
-
-    if (isset($_SESSION["userid"])) { ?><b>
-        <button onclick="location.href='./action/logout_action.php'" style="float:right; font-size:15.5px;">로그아웃</button>
-    <br />
-    <?php } else { ?>
-        <button onclick="location.href='./login.php'" style="float:right; font-size:15.5px;">로그인</button>
-        <br />
-    <?php }
+        $hit = "update board set hit = hit + 1 where number = $number";
+        $connect->query($hit);
     ?>
+    <?php include './overlap/header.php'; ?>
 
-    <table class="read_table">
+    <table class="read_table" align=center>
         <tr>
-            <td colspan="4" class="read_title"><?php echo $rows[
-              "title"
-            ]; ?></td>
+            <td colspan="4" class="read_title"><?php echo $rows['title'] ?></td>
         </tr>
         <tr>
             <td class="read_id">작성자</td>
-            <td class="read_id2"><?php echo $rows["id"]; ?></td>
+            <td class="read_id2"><?php echo $rows['id'] ?></td>
             <td class="read_hit">조회수</td>
-            <td class="read_hit2"><?php echo $rows["hit"] + 1; ?></td>
+            <td class="read_hit2"><?php echo $rows['hit'] ?></td>
         </tr>
 
 
         <tr>
             <td colspan="4" class="read_content" valign="top">
-                <?php echo $rows["content"]; ?></td>
+                <?php echo $rows['content'] ?></td>
         </tr>
     </table>
 
@@ -65,8 +55,10 @@
                 }
             </script>
         <?php } ?>
-
     </div>
+
+    <?php include './overlap/footer.php' ?>
+
 </body>
 
 </html>

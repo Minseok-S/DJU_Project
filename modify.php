@@ -8,24 +8,19 @@
 
 <body>
     <?php
-    ($connect = mysqli_connect(
-      "localhost",
-      "dstory",
-      "Thd24512!!",
-      "dstory"
-    )) or die("connect failed");
-    $number = $_GET["number"];
-    $query = "select title, content, date, id from board where number = $number";
-    $result = $connect->query($query);
-    $rows = mysqli_fetch_assoc($result);
+        include './overlap/db.php';
+        $number = $_GET["number"];
+        $query = "select title, content, date, id from board where number = $number";
+        $result = $connect->query($query);
+        $rows = mysqli_fetch_assoc($result);
 
-    $title = $rows["title"];
-    $content = $rows["content"];
-    $userid = $rows["id"];
+        $title = $rows["title"];
+        $content = $rows["content"];
+        $userid = $rows["id"];
 
-    session_start();
+        session_start();
 
-    $URL = "./index.php";
+        include './overlap/header.php';
 
     if (!isset($_SESSION["userid"])) { ?> <script>
             alert("권한이 없습니다.");
@@ -33,10 +28,10 @@
         </script>
     <?php } elseif ($_SESSION["userid"] == $userid) { ?>
         <form method="POST" action="./action/modify_action.php">
-            <table>
+        <table style="padding-top:50px" align=center width=auto border=0 cellpadding=2>
                 <tr>
-                    <td>
-                        <p><b>게시글 수정하기</b></p>
+                    <td style="height:40; float:center; background-color:#3C3C3C">
+                        <p style="font-size:25px; text-align:center; color:white; margin-top:15px; margin-bottom:15px"><b>게시글 수정하기</b></p>
                     </td>
                 </tr>
                 <tr>
@@ -44,9 +39,7 @@
                         <table class="table2">
                             <tr>
                                 <td>작성자</td>
-                                <td><input type="hidden" name="id" value="<?= $_SESSION[
-                                  "userid"
-                                ] ?>"><?= $_SESSION["userid"] ?></td>
+                                <td><input type="hidden" name="id" value="<?= $_SESSION['userid'] ?>"><?= $_SESSION['userid'] ?></td>
                             </tr>
 
                             <tr>
@@ -62,7 +55,7 @@
                         </table>
 
                         <div>
-                            <button id="btn" onclick="location.href='./index.php'">취소</button>
+                            <button id="btn" type="submit" name="cancle" value="<?= $number ?>"z>취소</button>
                             <button id="btn" type="submit" name="number" value="<?= $number ?>"z>수정</button>
                         </div>
                     </td>

@@ -7,13 +7,8 @@
 </head>
 
 <body class="login_body">
-    <div class="header"> 
-        <div class="header_inner">
-            <a href="/index.php" class="logo">
-                <h1 class="blind">HOME</h1>
-            </a>
-        </div> 
-    </div>
+    <?php include './overlap/header.php'; ?>
+
     <div class="content">
         <div class="login_wrap">
             <ul class="panel_wrap"> 
@@ -40,7 +35,7 @@
                 <li><a href='./register.php' class="find_text">회원가입</a></li>
         </ul>
     </div>
-    <div class="footer"></div>
+    <?php include './overlap/footer.php' ?>
 </body>
 
 </html>

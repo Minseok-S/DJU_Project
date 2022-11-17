@@ -1,23 +1,28 @@
 <?php
-($connect = mysqli_connect("localhost", "dstory", "Thd24512!!", "dstory")) or
-  die("connect failed");
+include '../overlap/db.php';
 
 $number = $_POST["number"];
+$cancle_num = $_POST["cancle"];
 $title = $_POST["title"];
 $content = $_POST["content"];
+$date = date("y-m-d");
+?> 
 
-$date = date("Y-m-d");
+<?php 
+    if(isset($number)){
+        $query = "update board set title='$title', content='$content', date='$date' where number=$number";
+        $result = $connect->query($query);
+}?>
 
-$query = "update board set title='$title', content='$content', date='$date' where number=$number";
-$result = $connect->query($query);
-if ($result) { ?>
+<?php
+if (isset($result)) { ?>
     <script>
         alert("수정되었습니다.");
         location.replace("../read.php?number=<?= $number ?>");
     </script>
 <?php } else { ?>
     <script>
-        alert("취소되었습니다.");
-        location.replace("/index.php");
-    </script> 
-    <?php } ?>
+        alert("<?php echo "취소되었습니다."; ?>");
+        location.replace("../read.php?number=<?= $cancle_num?>");
+    </script>
+<?php } ?>

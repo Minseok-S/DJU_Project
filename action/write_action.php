@@ -1,6 +1,5 @@
 <?php
-($connect = mysqli_connect("localhost", "dstory", "Thd24512!!", "dstory")) or
-  die("fail");
+include '../overlap/db.php';
 
 $id = $_POST["name"]; //Writer
 $title = $_POST["title"]; //Title

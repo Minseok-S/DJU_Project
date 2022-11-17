@@ -8,13 +8,8 @@
 </head>
 
 <body>
-    <div class="header"> 
-        <div class="header_inner">
-            <a href="/index.php" class="logo">
-                <h1 class="blind">HOME</h1>
-            </a>
-        </div> 
-    </div>
+    <?php include './overlap/header.php'; ?>
+
     <div class="content">
         <div class="login_wrap">
             <ul class="panel_wrap"> 
@@ -48,9 +43,7 @@
             </ul>
         </div>
     </div>
-    <div class="footer">
-        <span>대전대학교</span>
-    </div>
+    <?php include './overlap/footer.php'; ?>
 </body>
 
 </html>

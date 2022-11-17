@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect("localhost", "dstory", "Thd24512!!", "dstory") or die("connect failed");
+include './overlap/db.php'; 
 $number = $_GET['number'];
 
 $query = "select id from board where number = $number";
